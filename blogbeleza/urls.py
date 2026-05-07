@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from beleza import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('posts/', views.post_list, name = 'post_list'),
+    path('posts/new', views.post_create, name = 'post_create'),
+    path('posts/<int:id>/edit', views.post_update, name = 'post_update'),
+    path('posts/<int:id>/delete', views.post_delete, name = 'post_delete'),
 ]

@@ -1,0 +1,4 @@
+{% for post in posts %}
+  <p>{{ post.titulo }} - {{ post.autor }}</p>
+{% endfor %}
+<a href="{% url 'post_create' %}">Novo Post</a>
